@@ -1,0 +1,128 @@
+// Treemenu styles
+
+$highlight-color: #007bff;
+$light-text: #333; 
+
+.additional-data {
+  padding: 20px;
+  margin: 10px 30px;
+  line-height: 22px;
+  letter-spacing: 1px;
+  text-align: justify;
+  color: $light-text;
+  border-radius: 4px; 
+  box-shadow: 4px 4px 4px 6px rgba(0, 0, 0, 0.1); 
+
+  @media (max-width: 600px) {
+    padding: 5px;
+    margin: 5px 15px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+  }
+}
+
+.highlight {
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.node-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  line-height: 32px;
+  color: $light-text;
+  transition: all 0.3s ease-in;
+
+  &.leaf-node {
+    margin-left: 30px;
+    color: $light-text;
+
+    .node-label-text {
+      padding-left: 10px;
+    }
+
+    @media (max-width: 600px) {
+      margin-left: 0;
+      .node-label-text {
+        padding-left: 5px;
+      }
+    }
+  }
+
+  &.text-highlight {
+    .node-label-text {
+      font-weight: bold;
+    
+    }
+  }
+
+  &.parent-node {
+    .node-label-text {
+      text-transform: uppercase;
+      padding-left: 10px;
+      font-size: 1rem;
+      line-height: 11px;
+      font-weight: 600;
+
+      @media (max-width: 600px) {
+        font-size: 16px;
+        line-height: 9px;
+        padding-left: 5px;
+      }
+    }
+  }
+}
+
+.children {
+  margin-left: 10px;
+  transition: all 0.3s ease-in;
+
+  .tree-node {
+    margin-left: 8px;
+    font-style: italic;
+
+    @media (max-width: 600px) {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+
+  .node-label-text {
+    text-transform: capitalize;
+  }
+
+  &.text-highlight .node-label-text {
+    font-weight: bold;
+  }
+}
+
+.tree-node {
+  padding: 6px;
+  background-color: white;
+  transition: all 0.3s ease-in;
+
+  &.highlighted {
+    border-color: $highlight-color;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.text-highlight,
+.children.text-highlight .node-label-text,
+.text-highlight .toggle-icon,
+.text-highlight .leaf-icon {
+  color: $highlight-color;
+}
+
+.sub-child {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.children.text-highlight .node-label-text {
+  font-weight: bold;
+}
+
+
+

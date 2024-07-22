@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.additional-data {
+  padding: 20px;
+  margin: 10px 30px;
+  line-height: 22px;
+  letter-spacing: 1px;
+  text-align: justify;
+  color: #333;
+  border-radius: 4px;
+  box-shadow: 4px 4px 4px 6px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 600px) {
+  .additional-data {
+    padding: 5px;
+    margin: 5px 15px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+  }
+}
+
+.highlight {
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.node-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  line-height: 32px;
+  color: #333;
+  transition: all 0.3s ease-in;
+}
+.node-label.leaf-node {
+  margin-left: 30px;
+  color: #333;
+}
+.node-label.leaf-node .node-label-text {
+  padding-left: 10px;
+}
+@media (max-width: 600px) {
+  .node-label.leaf-node {
+    margin-left: 0;
+  }
+  .node-label.leaf-node .node-label-text {
+    padding-left: 5px;
+  }
+}
+.node-label.text-highlight .node-label-text {
+  font-weight: bold;
+}
+.node-label.parent-node .node-label-text {
+  text-transform: uppercase;
+  padding-left: 10px;
+  font-size: 1rem;
+  line-height: 11px;
+  font-weight: 600;
+}
+@media (max-width: 600px) {
+  .node-label.parent-node .node-label-text {
+    font-size: 16px;
+    line-height: 9px;
+    padding-left: 5px;
+  }
+}
+
+.children {
+  margin-left: 10px;
+  transition: all 0.3s ease-in;
+}
+.children .tree-node {
+  margin-left: 8px;
+  font-style: italic;
+}
+@media (max-width: 600px) {
+  .children .tree-node {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+.children .node-label-text {
+  text-transform: capitalize;
+}
+.children.text-highlight .node-label-text {
+  font-weight: bold;
+}
+
+.tree-node {
+  padding: 6px;
+  background-color: white;
+  transition: all 0.3s ease-in;
+}
+.tree-node.highlighted {
+  border-color: #007bff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.text-highlight,
+.children.text-highlight .node-label-text,
+.text-highlight .toggle-icon,
+.text-highlight .leaf-icon {
+  color: #007bff;
+}
+
+.sub-child {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.children.text-highlight .node-label-text {
+  font-weight: bold;
+}
+
+body.light {
+  background-color: #efefef;
+  color: #333;
+}
+body.dark {
+  background-color: #333333;
+  color: #333;
+}
+
+.App {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: 50px auto;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+.App.light {
+  background-color: #ffffff;
+  color: #333;
+}
+.App.dark {
+  background-color: #666262;
+  color: #ffffff;
+}
+.App.dark .theme-toggle {
+  border: 1px solid #fff;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  cursor: pointer;
+  border: 1px solid #000;
+  border-radius: 16px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.theme-toggle .theme-icon {
+  transition: color 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*# sourceMappingURL=styles.css.map */
